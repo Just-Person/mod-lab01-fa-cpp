@@ -1,6 +1,7 @@
 // Copyright 2022 UNN-IASR
 #include <iostream>
 #include <cctype>
+#include <math.h>
 #include "fun.h"
 
 unsigned int faStr1(const char* str) {
