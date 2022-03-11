@@ -12,10 +12,10 @@ while (*(str + iterator)) {
 if (*(str + iterator) != ' '
 && !isdigit(*(str + iterator)) && !finWord(inWord)) {
 count++;
-inWord = 1;
-} else if (*(str + iterator) == ' ' 
+inWord = 1;}
+else if (*(str + iterator) == ' '
 && finWord(inWord)) inWord = 0;
-else if (isdigit(*(str + iterator)) 
+else if (isdigit(*(str + iterator))
 && inWord == 0) inWord = 2;
 else if (isdigit(*(str + iterator)) && inWord == 1) {
 inWord = 2;
@@ -34,7 +34,7 @@ count++;
 inWord = 1;
 } else if (!islowermy(*(str + iterator))
 && !finWord(inWord)) inWord = 2;
-else if (*(str + iterator) == ' ' 
+else if (*(str + iterator) == ' '
 && finWord(inWord)) inWord = 0;
 else if (!islowermy(*(str + iterator)) && inWord == 1) {
 inWord = 2;
