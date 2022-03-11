@@ -35,11 +35,12 @@ unsigned int faStr2(const char* str) {
  count++;
  inWord = 1;
  }
- else if (islower(*(str + iterator)) && !finWord(inWord))
+ else if (!islowermy(*(str + iterator))
+ && !finWord(inWord))
  inWord = 2;
  else if (*(str + iterator) == ' ' && finWord(inWord))
  inWord = 0;
- else if (isupper(*(str + iterator)) && inWord == 1) {
+ else if (!islowermy(*(str + iterator)) && inWord == 1) {
  inWord = 2;
  count--;
  }
@@ -49,7 +50,6 @@ unsigned int faStr2(const char* str) {
 }
 unsigned int faStr3(const char* str) {
  int count = 0;
- int buffersum = 0;
  int sum = 0;
  bool inWord = false;
  int iterator = 0;
@@ -60,11 +60,9 @@ unsigned int faStr3(const char* str) {
  }
  else if (*(str + iterator) == ' ' && inWord == true) {
  inWord = false;
- sum += buffersum;
- buffersum = 0;
  }
  if (inWord == true)
- buffersum++;
+ sum++;
  iterator++;
  }
  count = round(double(sum) / double(count));
@@ -72,6 +70,12 @@ unsigned int faStr3(const char* str) {
 }
 bool finWord(int inWord) {
  if (inWord != 0)
+ return true;
+ else
+ return false;
+}
+bool islowermy(char a) {
+ if (int(a) >= 97 && int(a) <= 122)
  return true;
  else
  return false;
