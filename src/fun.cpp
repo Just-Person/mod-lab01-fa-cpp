@@ -1,6 +1,6 @@
 // Copyright 2022 UNN-IASR
-#include <iostream>
 #include <math.h>
+#include <iostream>
 #include <cctype>
 #include "fun.h"
 
