@@ -60,7 +60,7 @@ if (inWord == true)
 sum++;
 iterator++;
 }
-count = round(double(sum) / double(count));
+count = round(static_cast<double>(sum) / static_cast<double>(count));
 return count;
 }
 bool finWord(int inWord) {
@@ -70,7 +70,7 @@ else
 return false;
 }
 bool islowermy(char a) {
-if (int(a) >= 97 && int(a) <= 122)
+if (static_cast<int>(a) >= 97 && static_cast<int>(a) <= 122)
 return true;
 else
 return false;
